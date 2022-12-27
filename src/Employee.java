@@ -40,7 +40,7 @@ public class Employee {
     }
 
     //Список всех сотрудников со всеми имеющимися по ним данными
-    public static void printEmployee(Employee[] employees) {
+    /*public static void printEmployee(Employee[] employees) {
         System.out.println("Данные по всем сотрудникам " + Arrays.toString(employees));
     }
 
@@ -55,7 +55,7 @@ public class Employee {
 
     //поиск сотрудника с минимальной зарплатой
     public static Employee findMinSalary(Employee[] employees) {
-        int minSalary = employees[0].getSalary();
+        int minSalary = Integer.MAX_VALUE;
         Employee employeeMinSalary = employees[0];
         for (Employee employee : employees) {
             if (employee.getSalary() < minSalary) {
@@ -68,7 +68,7 @@ public class Employee {
 
     //поиск сотрудника с максимальной зарплатой
     public static Employee findMaxSalary(Employee[] employees) {
-        int maxSalary = employees[0].getSalary();
+        int maxSalary = Integer.MIN_VALUE;
         Employee employeeMaxSalary = employees[0];
         for (Employee employee : employees) {
             if (employee.getSalary() > maxSalary) {
@@ -153,11 +153,8 @@ public class Employee {
         int countEmployeeOfDepartment = 0;
         for (Employee employee : employees) {
             if (employee.getDepartment() != department) {
-                continue;
-            }
             sum += employee.getSalary();
-            if (employee.getDepartment() == department) {
-                countEmployeeOfDepartment++;
+            countEmployeeOfDepartment++;
             }
         }
         return sum / countEmployeeOfDepartment;
@@ -192,7 +189,7 @@ public class Employee {
                 System.out.println("Зарплата больше заданной " + " id: " + employee.getId() + " ФИО: " + employee.getFullName() + " Зарплата: " + employee.getSalary());
             }
         }
-    }
+    }*/
 
 
     @Override
