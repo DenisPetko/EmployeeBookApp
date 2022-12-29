@@ -62,11 +62,10 @@ public class Main {
         employeeBook.printIndexSalaryEmployeeOfDepartment(1, 1.083);
         employeeBook.printEmployeeOfDepartment(2);
         employeeBook.printSomeEmployee(100000);
-        //employeeBook.deleteEmployee(0);
+        employeeBook.deleteEmployee(4);
         //проверил удаляется ли сотрудник
-        System.out.println();
-        employeeBook.printSomeEmployee(100000);
-        //employeeBook.changeEmployee("Иванов Иван Иванович");
+        //employeeBook.changeEmployee("Иванов Иван Иванович", 100, 5);
+        //проверил меняется ли сотрудник
         employeeBook.printAllEmployeeOfDepartment();
 
 

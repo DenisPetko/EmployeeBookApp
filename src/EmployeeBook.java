@@ -68,12 +68,14 @@ public class EmployeeBook {
     //Среднее значение зарплат
     public double findAverageSalary() {
         int sum = 0;
+        int amountEmployee = 0;
         for (Employee employee : employees) {
             if (employee != null) {
                 sum += employee.getSalary(); //
+                amountEmployee++;
             }
         }
-        return (double) sum / employees.length;
+        return (double) sum / amountEmployee;
     }
 
     //ФИО всех сотрудников
@@ -151,7 +153,7 @@ public class EmployeeBook {
         int countEmployeeOfDepartment = 0;
         for (Employee employee : employees) {
             if (employee != null) {
-                if (employee.getDepartment() != department) {
+                if (employee.getDepartment() == department) {
                     sum += employee.getSalary();
                     countEmployeeOfDepartment++;
                 }
@@ -200,26 +202,23 @@ public class EmployeeBook {
 
     //Удалить сотрудника
     public void deleteEmployee(int id) {
-        boolean check = true;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null) {
                 if (employees[i].getId() == id) {
                     employees[i] = null;
+                    System.out.println("Сотрудник с id: " + id + " удален из списка");
                     break;
                 }
-
-            } else {
-                System.out.println("Данный сотрудник уже удален ");
             }
         }
     }
 
-    public void changeEmployee(String fullName) {
+    public void changeEmployee(String fullName, int newSalary, int newDepartment) {
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null) {
                 if (employees[i].getFullName() == fullName) {
-                    employees[i].setSalary(100);
-                    employees[i].setDepartment(5);
+                    employees[i].setSalary(newSalary);
+                    employees[i].setDepartment(newDepartment);
                 }
             }
         }
@@ -228,7 +227,7 @@ public class EmployeeBook {
     public void printAllEmployeeOfDepartment() {
         for (int i = 1; i <= 5; i++) {
             for (Employee employee : employees) {
-                if (employees[i] != null) {
+                if (employee != null) {
                     if (employee.getDepartment() == i) {
                         System.out.println(employee);
                     }
@@ -236,43 +235,4 @@ public class EmployeeBook {
             }
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*Изменить сотрудника - НЕ МОГУ ПОНЯТЬ КАК НАПИСАТЬ КОД ПРАВИЛЬНО, ТЕОРЕТИЧЕСКИ ПРОВЕРИТЬ ЕСЛИ id равен тому, что
-    задан аргументом в методе, то использовать setSalary, но я не понимаю у кого этот setSalary вызвать. По отделу
-    то же самое я так понимаю?
-
-    public void changeSalary(int id) {
-        if (Employee.) {
-
-        }
-    }
-
-    public void changeDepartment(int id) {
-        if (employeeBook.) {
-        }
-    }
-
-    //Получить Ф. И. О. всех сотрудников по отделам (напечатать список отделов и их сотрудников).
-    public void changeDepartment(int id) {
-        if (employeeBook.) {
-        }
-    }               */
 }
