@@ -151,6 +151,7 @@ public class EmployeeBook {
     public double findAverageSalaryOfDepartment(int department) {
         int sum = 0;
         int countEmployeeOfDepartment = 0;
+        double findAverage = 0;
         for (Employee employee : employees) {
             if (employee != null) {
                 if (employee.getDepartment() == department) {
@@ -159,7 +160,10 @@ public class EmployeeBook {
                 }
             }
         }
-        return (double)sum / countEmployeeOfDepartment;
+        if (countEmployeeOfDepartment != 0) {
+            findAverage =  (double)sum / countEmployeeOfDepartment;
+        }
+        return findAverage;
     }
 
     //Проиндексировать зарплату сотрудников отдела
