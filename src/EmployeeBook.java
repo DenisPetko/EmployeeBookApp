@@ -216,7 +216,7 @@ public class EmployeeBook {
     public void changeEmployee(String fullName, int newSalary, int newDepartment) {
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null) {
-                if (employees[i].getFullName() == fullName) {
+                if (employees[i].getFullName().equals(fullName)) {
                     employees[i].setSalary(newSalary);
                     employees[i].setDepartment(newDepartment);
                 }

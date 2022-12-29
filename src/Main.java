@@ -64,7 +64,7 @@ public class Main {
         employeeBook.printSomeEmployee(100000);
         employeeBook.deleteEmployee(4);
         //проверил удаляется ли сотрудник
-        //employeeBook.changeEmployee("Иванов Иван Иванович", 100, 5);
+        employeeBook.changeEmployee("Иванов Иван Иванович", 100, 5);
         //проверил меняется ли сотрудник
         employeeBook.printAllEmployeeOfDepartment();
 
