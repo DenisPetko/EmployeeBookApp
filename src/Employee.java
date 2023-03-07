@@ -50,12 +50,11 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "fullName='" + fullName + '\'' +
-                ", department=" + department +
-                ", salary=" + salary +
+        return "Работник: " + fullName +
+                ", отдел: " + department +
+                ", зарплата: " + salary +
                 ", id=" + id +
-                '}';
+                ';';
     }
 
     public Employee(String fullName, int department, int salary) {
